@@ -37,6 +37,7 @@ import trade.dolcecosmetics.app.ui.theme.DolceTextSecondary
 @Composable
 fun SettingsScreen(modifier: Modifier = Modifier) {
     val context = LocalContext.current
+    val customerSupportLink = stringResource(R.string.customer_support_link)
 
     Column(
         modifier = modifier
@@ -76,7 +77,7 @@ fun SettingsScreen(modifier: Modifier = Modifier) {
                     label = stringResource(R.string.settings_screen_customer_support_label),
                     linkText = stringResource(R.string.customer_support_link),
                     onClick = {
-                        val uri = Uri.parse(stringResource(R.string.customer_support_link))
+                        val uri = Uri.parse(customerSupportLink)
                         val intent = Intent(Intent.ACTION_VIEW, uri)
                         context.startActivity(intent)
                     },
